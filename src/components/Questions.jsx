@@ -1,8 +1,10 @@
 import { useState } from 'react';
 
+// ? CUSTOM HOOK
+import { useFetchQuestion } from '../hooks/fetchQuestion';
 export default function Questions() {
   const [checked, setChecked] = useState(undefined);
-
+  const [{isLoading, apiData, serverError}] = useFetchQuestion()
   function onSelect() {
     console.log('radio button change');
   }
